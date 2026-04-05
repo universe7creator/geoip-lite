@@ -101,6 +101,42 @@
       z-index: -1;
     }
 
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent-purple);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 20s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.3; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* CTA Glow Effect */
+    @keyframes ctaGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2); }
+      50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3); }
+    }
+
+    .cta-glow {
+      animation: ctaGlow 2s ease-in-out infinite;
+    }
+
     /* Container */
     .container {
       max-width: 1200px;
@@ -762,6 +798,7 @@
 <body>
   <div class="bg-gradient"></div>
   <div class="grid-pattern"></div>
+  <div class="particles"></div>
 
   <!-- Navigation -->
   <nav>
@@ -797,7 +834,7 @@
       </p>
 
       <div class="hero-cta-group">
-        <a href="#pricing" class="btn-primary">Get API Key — $14</a>
+        <a href="#pricing" class="btn-primary cta-glow">Get API Key — $14</a>
         <a href="#demo" class="btn-secondary">Try Demo</a>
       </div>
 
@@ -1053,7 +1090,31 @@
   </footer>
 
   <script>
-    const CHECKOUT_URL = window.__CHECKOUT_URL || null;
+    // Floating Particles
+    function createParticles() {
+      const container = document.querySelector('.particles');
+      if (!container) return;
+
+      const particleCount = 25;
+      const colors = ['#8b5cf6', '#3b82f6', '#06b6d4'];
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.width = (2 + Math.random() * 4) + 'px';
+        particle.style.height = particle.style.width;
+        container.appendChild(particle);
+      }
+    }
+
+    // Initialize particles on load
+    document.addEventListener('DOMContentLoaded', createParticles);
+
+    const CHECKOUT_URL = 'https://profitbridge.lemonsqueezy.com/checkout/buy/de3db6a0-aba6-42d7-a8eb-5bcb03d6c4bc';
 
     function handleBuy() {
       if (CHECKOUT_URL) {
