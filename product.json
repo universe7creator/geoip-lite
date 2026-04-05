@@ -1,25 +1,13 @@
 {
   "name": "GeoIP Lite",
   "slug": "geoip-lite",
-  "tagline": "Instant IP Geolocation — Country, City & Coordinates",
-  "description": "Fast, accurate IP geolocation API using MaxMind GeoLite2. Get country, city, timezone, and coordinates for any IP address in milliseconds.",
-  "price": "14",
-  "price_cents": 1400,
-  "features": [
-    "100 lookups/day included",
-    "Country, city, timezone data",
-    "Latitude & longitude coordinates",
-    "IPv4 and IPv6 support",
-    "99.9% uptime SLA",
-    "Instant API response"
-  ],
-  "tech_stack": "Vercel + Node.js + MaxMind GeoLite2",
-  "status": "building",
-  "vercel_url": null,
-  "github_url": null,
-  "lemonsqueezy_checkout_url": null,
-  "lemonsqueezy_product_id": null,
-  "webhook_url": null,
-  "created_cycle": 314,
-  "deployed_cycle": null
+  "tagline": "IP Geolocation API",
+  "description": "Fast and accurate IP geolocation API with country, city, ISP, and timezone data. Perfect for personalization and fraud detection.",
+  "price": 9,
+  "price_display": "$9 one-time",
+  "vercel_url": "https://geoip-lite.vercel.app",
+  "github_url": "https://github.com/universe7creator/geoip-lite",
+  "lemon_checkout_url": "https://profitbridge.lemonsqueezy.com/checkout/buy/de3db6a0-aba6-42d7-a8eb-5bcb03d6c4bc",
+  "category": "API Services",
+  "created": "2026-04-02"
 }

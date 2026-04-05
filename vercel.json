@@ -6,7 +6,7 @@
   ],
   "routes": [
     { "src": "/api/health", "dest": "/api/health.js" },
-    { "src": "/api/process", "dest": "/api/process.js" },
+    { "src": "/api/geoip", "dest": "/api/geoip.js" },
     { "src": "/api/webhook", "dest": "/api/webhook.js" },
     { "src": "/(.*)", "dest": "/public/index.html" }
   ]
