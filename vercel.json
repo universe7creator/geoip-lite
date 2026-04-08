@@ -2,12 +2,17 @@
   "version": 2,
   "builds": [
     { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "public/index.html", "use": "@vercel/static" },
     { "src": "public/**", "use": "@vercel/static" }
   ],
   "routes": [
+    { "handle": "filesystem" },
     { "src": "/api/health", "dest": "/api/health.js" },
     { "src": "/api/geoip", "dest": "/api/geoip.js" },
     { "src": "/api/webhook", "dest": "/api/webhook.js" },
-    { "src": "/(.*)", "dest": "/public/index.html" }
-  ]
+    { "src": "/", "dest": "/public/index.html" }
+  ],
+  "overrides": {
+    "public/index.html": { "path": "index.html" }
+  }
 }
