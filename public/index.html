@@ -635,6 +635,76 @@
       height: 16px;
     }
 
+    /* Testimonials */
+    .testimonials {
+      padding: 6rem 0;
+      background: var(--bg-primary);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gradient-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 1.125rem;
+    }
+
+    .testimonial-info h4 {
+      color: var(--text-primary);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .testimonial-info p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
     /* FAQ */
     .faq {
       padding: 6rem 0;
@@ -951,6 +1021,54 @@
           <div class="step-content">
             <h3>Get Location Data</h3>
             <p>Receive instant JSON response with country, city, coordinates, and more.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Developers Say</h2>
+        <p>Trusted by developers and businesses worldwide</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Perfect for my SaaS! The IP geolocation is accurate and the API is lightning fast. Love the one-time pricing model."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JD</div>
+            <div class="testimonial-info">
+              <h4>John Davis</h4>
+              <p>Founder @ StartupX</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Switched from a monthly subscription service. Saved hundreds per year with this simple, reliable API."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MK</div>
+            <div class="testimonial-info">
+              <h4>Mike Kim</h4>
+              <p>Lead Dev @ TechCorp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Integration took 10 minutes. The documentation is clear and the response format is exactly what I needed."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SR</div>
+            <div class="testimonial-info">
+              <h4>Sarah Reed</h4>
+              <p>Full-stack Developer</p>
+            </div>
           </div>
         </div>
       </div>
